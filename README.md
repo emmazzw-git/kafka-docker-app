@@ -1,4 +1,4 @@
-kafka docker app 
+Kafka Docker App 
 
 To run it
 

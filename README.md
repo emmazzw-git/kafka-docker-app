@@ -46,13 +46,16 @@ nc -vz 0.0.0.0 9091
 5. List the topics
 
 ```bash
-docker exec kafka-docker-app_kafka-1_1 kafka-topics.sh --list --zookeeper zookeeper:2181
+docker exec k -it afka-docker-app_kafka-1_1 \
+  kafka-topics.sh \
+  --bootstrap-server :9092
+  --list 
 ```
 
 6. Create topics
 
 ```bash
-docker exec -t kafka-docker-app_kafka-1_1 \
+docker exec -it kafka-docker-app_kafka-1_1 \
   kafka-topics.sh \
     --bootstrap-server :9092 \
     --create \
@@ -64,7 +67,7 @@ docker exec -t kafka-docker-app_kafka-1_1 \
 7. Describe topics
 
 ```bash
-docker exec -t kafka-docker-app_kafka-1_1 \
+docker exec -it kafka-docker-app_kafka-1_1 \
   kafka-topics.sh \
     --bootstrap-server :9092 \
     --describe \
@@ -74,7 +77,7 @@ docker exec -t kafka-docker-app_kafka-1_1 \
 8. Delete topics
 
 ```bash
-docker exec -t kafka-docker-app_kafka-1_1 \
+docker exec -it kafka-docker-app_kafka-1_1 \
   kafka-topics.sh \
     --bootstrap-server :9092 \
     --delete \

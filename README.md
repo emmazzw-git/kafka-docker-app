@@ -78,7 +78,6 @@ docker exec -t kafka-docker-app_kafka-1_1 \
   kafka-topics.sh \
     --bootstrap-server :9092 \
     --delete \
-    --describe \
     --topic payments-stream
 ```
 

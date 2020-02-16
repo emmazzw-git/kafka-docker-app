@@ -90,7 +90,24 @@ docker exec -it kafka-docker-app_kafka-1_1 \
 brew install pipenv
 ```
 
-10. Install kafka-python
+check pipenv version
+```bash
+pipenv --version
+```
+
+10. Install dependencies
+
+```bash
+pipenv install
+```
+
+Activate this project's virtualenv
+
+```bash
+pipenv run
+```
+
+11. Install kafka-python
 
 ```bash
 pipenv install kafka-python

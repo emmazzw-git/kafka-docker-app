@@ -61,7 +61,7 @@ docker exec -t kafka-docker-app_kafka-1_1 \
     --replication-factor 1
 ```
 
-6. Describe topics
+7. Describe topics
 
 ```bash
 docker exec -t kafka-docker-app_kafka-1_1 \
@@ -71,7 +71,7 @@ docker exec -t kafka-docker-app_kafka-1_1 \
     --topic payments-stream
 ```
 
-6. Delete topics
+8. Delete topics
 
 ```bash
 docker exec -t kafka-docker-app_kafka-1_1 \
@@ -82,13 +82,19 @@ docker exec -t kafka-docker-app_kafka-1_1 \
     --topic payments-stream
 ```
 
-> 
+9. Install [pipenv](https://formulae.brew.sh/formula/pipenv) (via Homebrew).
 
+```bash
+brew install pipenv
+```
 
+10. Install kafka-python
 
+```bash
+pipenv install kafka-python
+```
 
-
-* When scale brokers, clearing the existing volumes
+* When scaling brokers, clear the existing volumes
 
 ```bash
 docker volume prune

@@ -46,9 +46,9 @@ nc -vz 0.0.0.0 9091
 5. List the topics
 
 ```bash
-docker exec k -it afka-docker-app_kafka-1_1 \
+docker exec -it kafka-docker-app_kafka-1_1 \
   kafka-topics.sh \
-  --bootstrap-server :9092
+  --bootstrap-server :9092 \
   --list 
 ```
 
@@ -84,34 +84,19 @@ docker exec -it kafka-docker-app_kafka-1_1 \
     --topic payments-stream
 ```
 
-9. Install [pipenv](https://formulae.brew.sh/formula/pipenv) (via Homebrew).
+9. Run and run app in docker
 
 ```bash
-brew install pipenv
+docker build -t kafka-app .
 ```
-
-check pipenv version
-```bash
-pipenv --version
-```
-
-10. Install dependencies
 
 ```bash
-pipenv install
+docker run -it --rm \
+    --network kafka-docker-app_default \
+    --name kafka-app kafka-app
 ```
 
-Activate this project's virtualenv
 
-```bash
-pipenv run
-```
-
-11. Install kafka-python
-
-```bash
-pipenv install kafka-python
-```
 
 * When scaling brokers, clear the existing volumes
 

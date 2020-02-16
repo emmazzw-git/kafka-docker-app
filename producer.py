@@ -1,10 +1,4 @@
 from kafka import KafkaProducer
-import json
-import uuid
-
-server = 'broker:9092'
-topic_name = "payments-stream"
-message = json.dumps({"name": "Mark"})
 
 def publish_message(producer_instance, topic_name, key, value):
     try:
@@ -30,12 +24,6 @@ def connect_kafka_producer(server):
 
 
 
-if __name__ == '__main__':
-    server = 'broker:9092'
-    topic_name = "payments-stream"
-    message = json.dumps({"name": "Mark"})
-    kafka_producer = connect_kafka_producer(server)
-    publish_message(kafka_producer, topic_name, str(uuid.uuid4()), message)
 
 
 

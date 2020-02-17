@@ -96,8 +96,6 @@ docker run -it --rm \
     --name kafka-app kafka-app
 ```
 
-
-
 * When scaling brokers, clear the existing volumes
 
 ```bash

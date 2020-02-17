@@ -1,13 +1,13 @@
 # Kafka Docker App 
 
 ## Getting Started
-1. Spin up the Zookeeper, brokers and Kafka Monitoring UI using docker
+* Spin up the Zookeeper, brokers and Kafka Monitoring UI using docker
 
 ```bash
 docker-compose up
 ```
 
-2. List the docker container names
+* List the docker container names
 
 ```bash
 docker ps --format "{{ .Names }}"
@@ -18,7 +18,7 @@ docker ps --format "{{ .Names }}"
 > kafka-docker-app_kafka-2_1
 > kafka-docker-app_zookeeper_1
 
-3. Connect to the container of the Kafka broker
+* Connect to the container of the Kafka broker
 
 ```bash
 docker inspect --format='{{range $k, $v := .NetworkSettings.Ports}}{{range $v}}{{$k}} -> {{.HostIp}} {{.HostPort}}{{end}}{{end}}' kafka-docker-app_kafka-1_1
@@ -26,7 +26,7 @@ docker inspect --format='{{range $k, $v := .NetworkSettings.Ports}}{{range $v}}{
 
 > 9092/tcp -> 0.0.0.0 9091
 
-4. Check the connection from the host to the single Kafka broker
+* Check the connection from the host to the single Kafka broker
 
 ```bash
 nc -vz 0.0.0.0 9091
@@ -43,7 +43,7 @@ nc -vz 0.0.0.0 9091
 
 > Connection to 0.0.0.0 port 9091 [tcp/xmltec-xmlmail] succeeded!
 
-5. List the topics
+* List the topics
 
 ```bash
 docker exec -it kafka-docker-app_kafka-1_1 \
@@ -52,7 +52,7 @@ docker exec -it kafka-docker-app_kafka-1_1 \
   --list 
 ```
 
-6. Create topics
+* Create topics
 
 ```bash
 docker exec -it kafka-docker-app_kafka-1_1 \
@@ -64,7 +64,7 @@ docker exec -it kafka-docker-app_kafka-1_1 \
     --replication-factor 1
 ```
 
-7. Describe topics
+* Describe topics
 
 ```bash
 docker exec -it kafka-docker-app_kafka-1_1 \
@@ -74,7 +74,7 @@ docker exec -it kafka-docker-app_kafka-1_1 \
     --topic payments-stream
 ```
 
-8. Delete topics
+* Delete topics
 
 ```bash
 docker exec -it kafka-docker-app_kafka-1_1 \
@@ -84,7 +84,7 @@ docker exec -it kafka-docker-app_kafka-1_1 \
     --topic payments-stream
 ```
 
-9. Run and run app in docker
+* Run and run app in docker
 
 ```bash
 docker build -t kafka-app .

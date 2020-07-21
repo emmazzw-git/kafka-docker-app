@@ -3,7 +3,7 @@
 ## Getting Started
 * Spin up the Zookeeper, brokers and Kafka Monitoring UI using docker
 
-```bash
+```
 docker-compose up
 ```
 
